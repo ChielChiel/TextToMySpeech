@@ -13,15 +13,12 @@ from pydub import AudioSegment
 #Setup the file system with a connection to google drive. Here are your phonetic files located
 drive.mount('/content/drive/', force_remount=True)
 
-#function to quickly play an audio file
 def play(file):
   return Audio(file, autoplay=True)
 
 #The phonetic functions
 listWoordAf = []
-#This function returns a list with the phonetic characters in IPA of a given word.
-#This funciton only searches the dutch wikitonary and an other dutch words website. If you arent Dutch, you use for example:
-#en.wikitionary.org
+
 def getFonetic(word):
   toReturn = ''
 
@@ -100,10 +97,6 @@ def getFonetic(word):
     
   return toReturn
 
-
-#This function replaces most of the punctuation marks in a given string, sentence or a whole paragraph.
-#Also it puts the words in the getFonetic function one by one, and in the end, it returns all the phonetic characters
-#in a list
 def toFonArray(string):
   fonArray = []
   string = string.replace(' ', ' &nbsp; ').replace(' .', '&#46;').replace(' ,', '&#44;').lower()
@@ -121,7 +114,6 @@ def toFonArray(string):
   
   return fonArray
 
-#This function converts a list of phonetic characters to an audio file. 
 ipaSampa = {"χ" : "x", "a":"adp","e":"edp","ɪː":"idp", "o": "odp","p":"p", "t":"t", "k":"k", "f":"f", "s":"s", "ʃ":"ss", "x":"x", "b":"b", "d":"d", "ɡ":"g", "v":"v", "z":"z", "ʒ":"zz", "ɣ":"gg", "ɦ":"h_", "l":"l", "r":"r", "m":"m", "n":"n", "ŋ":"nn", "j":"j", "w": "v_", "ʋ":"v_", "tʃ":"tS", "ts":"ts", "dʒ":"dZ", "ɑ":"aa", "ɛ":"eedp", "ɪ":"ii", "ɔ":"oo", "ʏ":"yy", "ə":"@", "aː":"adp","eː":"edp", "i":"i", "oː":"odp", "y":"y", "øː":"2dp", "u":"u", "ɛː":"eedp", "œː":"9dp","iː":"idp", "yː":"ydp", "ɔː":"oodp", "uː":"udp", "ɛi":"Ei", "œy":"9y", "ʌu":"Vu", "ɑi":"Ai", "ɔi":"i", "aːi":"adpi", "eːu":"edpu", "iu":"iu", "oːi":"odpi", "ui":"ui"}
 
 def toAudio(lijst):
@@ -161,19 +153,10 @@ def toAudio(lijst):
   print('DONE')
   return True
 
-#Here you have to put the phonetics of your language, see wikipedia or wikitionary for you language. 
-#I use the SAMPA format for the phonetic files. Thus in this list i convert the ipa format from wikitionary or woorden.org to the SAMPA format
 ipaSampa = {"ɱ":"mm","ɲ":"ng", "a":"adp","e":"edp","ɪː":"idp", "o": "odp","p":"p", "t":"t", "k":"k", "f":"f", "s":"s", "ʃ":"ss", "x":"x", "b":"b", "d":"d", "ɡ":"g", "v":"v", "z":"z", "ʒ":"zz", "ɣ":"gg", "ɦ":"h_", "l":"l", "r":"r", "m":"m", "n":"n", "ŋ":"nn", "j":"j", "ʋ":"v_", "tʃ":"tS", "ts":"ts", "dʒ":"dZ", "ɑ":"aa", "ɛ":"eedp", "ɪ":"ii", "ɔ":"oo", "ʏ":"yy", "ə":"@", "aː":"adp","eː":"edp", "i":"i", "oː":"odp", "y":"y", "øː":"2dp", "u":"u", "ɛː":"eedp", "œː":"9dp","iː":"idp", "yː":"ydp", "ɔː":"oodp", "uː":"udp", "ɛi":"Ei", "œy":"9y", "ʌu":"Vu", "ɑi":"Ai", "ɔi":"i", "aːi":"adpi", "eːu":"edpu", "iu":"iu", "oːi":"odpi", "ui":"ui"}
-var = "x"
 
-print(ipaSampa[var])
 
-"""#<h1>RESULT<h1>
-
----
-"""
-
-#
+# Result
 #@title Form {vertical-output: true }
 #@markdown After pressing ctrl+enter there will be an audiofile created
 listWoordAf = []
