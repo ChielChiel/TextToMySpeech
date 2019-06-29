@@ -14,7 +14,7 @@ For Dutch, use this one:
 
 If you know more, please feel free to add more languages
 
-## explanation of the functions
+## Explanation of the functions
 ### play(Audio file)
 ``` py
 def play(file):
