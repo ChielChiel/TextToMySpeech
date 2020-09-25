@@ -1,6 +1,8 @@
 # TextToMySpeech
 With this python programm, you can put in your own speech fonetics to make a text-to-speech with your own voice!
 
+See a demo [Here](https://imgur.com/a/RhQGAfz)
+
 ## setup
 First of all you will have to record all of the phonetic sounds of your language one by one. Each .wav file of a phonetic sound must correspond to exactly one phonetic character. The better you record the phonetic sounds, the better your text to speech will work. To record these sounds, say a word which contains a phonetic character you need to record, and then isolate that sound. Then save it with the SAMPA naming. Most file systems dont see the difference between a capital letter and a normal one so use for a capital Z in sampa zz.wav.
 
